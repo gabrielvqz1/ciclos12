@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-ES">
+    <head>
+        <meta charset="utf-8">
+      		<link rel="stylesheet" type="text/css" href="style.css">
+        <meta name="description" content="">
+        <meta name="author" content="Francesc Ricart">
+        <title>corredor</title>
+        
+        <style>
+            *{margin:0;padding:0;box-sizing:border-box;}
+            .contenedor{
+                margin:auto;
+                width:1200px;
+                height:1055px;
+                position:relative;
+                border:1px solid #000;
+                background:url('mario1.jpg') no-repeat 0 0;
+            }
+            
+            .corredor{
+                width:800px;
+                height:600px;
+                background:url('mario.gif') no-repeat 0 0;
+                position:absolute;
+                bottom:0;
+            }
+            
+        </style>      
+    </head>
+    <body>
+      	<div id="cuadrado"></div>
+	<script src="script.js"></script>
+	
+        <div class="contenedor">
+            <div class="corredor"></div>        
+        </div>
+
+       <script> 
+            window.onload=init;
+        function init(){
+            setInterval(mover,10);
+            izquierda  = 0;
+        }
+           
+        function mover(){
+            izquierda++;
+            if (izquierda<550){
+                document.querySelector(".corredor").style.left = izquierda + 'px';
+            }else{
+                izquierda = 0;
+            }      
+        } 
+        </script>
+   
+    </body>
+</html>
